@@ -1,10 +1,15 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
-const Section = ({ title = '', children }) => (
-  <section className="Section">
-    {title && <h2 className="title">{title}</h2>}
+const Section = ({ title, children }) => (
+  <section>
+    <h2>{title}</h2>
     {children}
   </section>
 );
+
+Section.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
+};
 
 export default Section;
